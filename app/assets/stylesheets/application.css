@@ -20,10 +20,14 @@
 *= require_self
 */
 
-@import "bootstrap";
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --light-gray: #777;
+    --gray-medium-light: #eaeaea;
+    --state-danger-text-color: red;
 }
 
 h1, h2, h3, h4, h5, h6 {
