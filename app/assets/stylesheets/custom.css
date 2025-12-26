@@ -131,3 +131,7 @@ input {
 .field_with_errors .form-control {
     color: var(--state-danger-text-color);
 }
+
+.dropdown-menu.active {
+    display: block;
+}
