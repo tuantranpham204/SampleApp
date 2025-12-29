@@ -132,6 +132,16 @@ input {
     color: var(--state-danger-text-color);
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: var(--light-gray);
+}
+
 .dropdown-menu.active {
     display: block;
+    position: absolute;
 }

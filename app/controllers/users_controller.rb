@@ -13,10 +13,9 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      render 'new', status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
-
 
   private
   def user_params
@@ -24,4 +23,3 @@ class UsersController < ApplicationController
                                  :password_confirmation)
   end
 end
-
