@@ -145,3 +145,19 @@ input {
     display: block;
     position: absolute;
 }
+
+.checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+}
+
+.checkbox span {
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+#session_remember_me {
+    width: auto;
+    margin-left: 0;
+}
