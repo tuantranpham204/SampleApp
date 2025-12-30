@@ -10,7 +10,6 @@ def generate_data(i)
   }
 end
 
-
 User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
@@ -20,5 +19,15 @@ User.create!(name:  "Example User",
              activated_at: Time.zone.now)  # <--- Add this
 
 (0..19).each do |i |
-  User.create!(generate_data(i))
+  puts User.create!(generate_data(i)).to_s
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| puts user.microposts.create!(content: content).to_s }
+
+end
+
+
+

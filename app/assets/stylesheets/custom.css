@@ -161,3 +161,24 @@ input {
     width: auto;
     margin-left: 0;
 }
+
+.pagination {
+    display: flex;
+    list-style: none;
+    border-radius: .25rem;
+}
+.pagination a, .pagination span {
+    padding: .5rem .75rem;
+    border: 1px solid #dee2e6;
+    color: #007bff;
+    text-decoration: none;
+}
+.pagination .current {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+.pagination .disabled {
+    color: #6c757d;
+    pointer-events: none;
+}

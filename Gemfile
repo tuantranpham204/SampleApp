@@ -21,11 +21,13 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem "will_paginate"
-gem "bootstrap-will_paginate"
+gem "will_paginate-bootstrap-style"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
+
+gem "active_storage_validations"
 
 # Load environment variables from .env file
 gem "dotenv-rails", groups: [ :development, :test ]
@@ -38,8 +40,6 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
-
-gem "dotenv-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -65,6 +65,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "faker"
 end
 
 group :development do
