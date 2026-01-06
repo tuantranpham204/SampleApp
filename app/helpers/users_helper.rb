@@ -5,4 +5,12 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
+
+  def style_li(bootstrap_params)
+    class_params = ""
+    bootstrap_params.each do | str |
+      class_params += str + " "
+    end
+    class_params
+  end
 end

@@ -182,3 +182,16 @@ input {
     color: #6c757d;
     pointer-events: none;
 }
+
+.btn.btn-del {
+    color: white;
+    background-color: var(--state-danger-text-color);
+}
+
+.btn.btn-del:hover {
+    background-color: white;
+    color: var(--state-danger-text-color);
+    border: var(--state-danger-text-color) 1px solid;
+
+}
+
