@@ -1,6 +1,15 @@
 <% if @feed_items.any? %>
-  <ol class="microposts d-flex flex-column m-2">
-    <%= render @feed_items %>
+  <ol class="microposts m-2">
+    <% @feed_items.each do | feed_item | %>
+      <li class="m-2 d-flex flex-column justify-content-between">
+        <%= render "shared/user_info", user: feed_item.user, class: "d-flex flex-column justify-content-between"  %>
+        <div class="d-flex flex-column justify-content-between">
+          <p style="height: 50px">
+            <%= feed_item.content %>
+          </p>
+        </div>
+      </li>
+    <% end %>
   </ol>
   <%= will_paginate @feed_items %>
 <% end %>

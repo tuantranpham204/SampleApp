@@ -5,8 +5,20 @@
       <%= link_to user.name, user %>
     </div>
     <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "Delete", user, data: { "turbo-method": :delete,
-                                          turbo_confirm: "You sure?" }, class: "btn btn-del m-2 "%>
+      <div>
+        <% if current_user.following?(user) %>
+          <%= link_to "Follow", user, data: {"turbo-method": :follow} %>
+
+        <% else %>
+          <%= link_to "Unfollow", user, data: {"turbo-method": :unfollow} %>
+        <% end %>
+
+        <%= link_to "Delete", user, data: { "turbo-method": :delete,
+                                            turbo_confirm: "You sure?" }, class: "btn btn-del m-2 "%>
+
+      </div>
+
+
     <% end %>
   </div>
 

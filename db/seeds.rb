@@ -33,10 +33,16 @@ end
 # Create following relationships.
 users = User.all
 user  = users.first
-following = users[2..50]
-followers = users[3..40]
-following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) }
+users[2..50].each do | following |
+  user.follow(following)
+end
+users[3..40].each do | follower |
+  follower.follow(user)
+end
+
+
+
+
 
 
 

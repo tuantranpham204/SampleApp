@@ -53,6 +53,10 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def followed?(other_user)
+    other_user.followers.include?(self)
+  end
+
   # Returns a random token.
   def User.new_token
     SecureRandom.urlsafe_base64
