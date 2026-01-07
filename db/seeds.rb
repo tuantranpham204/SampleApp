@@ -1,9 +1,48 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+def generate_data(i)
+  {
+    name:  "Example User #{i+1}",
+    email: "example#{i+1}@railstutorial.org",
+    password:              "foobar",
+    password_confirmation: "foobar",
+    admin: true,
+    activated: true,              # <--- Add this
+    activated_at: Time.zone.now
+  }
+end
+
+User.create!(name:  "Example User",
+             email: "example@railstutorial.org",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: true,
+             activated: true,              # <--- Add this
+             activated_at: Time.zone.now)  # <--- Add this
+
+(0..19).each do |i |
+  puts User.create!(generate_data(i)).to_s
+end
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| puts user.microposts.create!(content: content).to_s }
+end
+
+# ... users and microposts ...
+
+# Create following relationships.
+users = User.all
+user  = users.first
+users[2..50].each do | following |
+  user.follow(following)
+end
+users[3..40].each do | follower |
+  follower.follow(user)
+end
+
+
+
+
+
+
+

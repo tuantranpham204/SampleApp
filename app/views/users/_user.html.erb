@@ -1,0 +1,27 @@
+<li class="">
+  <div class="m-2 d-flex flex-row justify-content-between">
+    <div>
+      <%= gravatar_for user, size: 50 %>
+      <%= link_to user.name, user %>
+    </div>
+    <% if current_user.admin? && !current_user?(user) %>
+      <div>
+        <% if current_user.following?(user) %>
+          <%= link_to "Follow", user, data: {"turbo-method": :follow} %>
+
+        <% else %>
+          <%= link_to "Unfollow", user, data: {"turbo-method": :unfollow} %>
+        <% end %>
+
+        <%= link_to "Delete", user, data: { "turbo-method": :delete,
+                                            turbo_confirm: "You sure?" }, class: "btn btn-del m-2 "%>
+
+      </div>
+
+
+    <% end %>
+  </div>
+
+
+
+</li>

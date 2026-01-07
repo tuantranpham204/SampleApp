@@ -14,6 +14,10 @@ textarea {
     margin-bottom: 10px;
 }
 
+.microposts {
+    width: 70%;
+}
+
 #logo {
     float: left;
     margin-right: 10px;
@@ -131,3 +135,67 @@ input {
 .field_with_errors .form-control {
     color: var(--state-danger-text-color);
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: var(--light-gray);
+}
+
+.dropdown-menu.active {
+    display: block;
+    position: absolute;
+}
+
+.checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+}
+
+.checkbox span {
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+#session_remember_me {
+    width: auto;
+    margin-left: 0;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    border-radius: .25rem;
+}
+.pagination a, .pagination span {
+    padding: .5rem .75rem;
+    border: 1px solid #dee2e6;
+    color: #007bff;
+    text-decoration: none;
+}
+.pagination .current {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+.pagination .disabled {
+    color: #6c757d;
+    pointer-events: none;
+}
+
+.btn.btn-del {
+    color: white;
+    background-color: var(--state-danger-text-color);
+}
+
+.btn.btn-del:hover {
+    background-color: white;
+    color: var(--state-danger-text-color);
+    border: var(--state-danger-text-color) 1px solid;
+
+}
+
